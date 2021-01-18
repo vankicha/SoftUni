@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Application 2020</title>
+    <link rel="icon" type="image/png" href="../static/favicon.ico">
+    <link href="../static/css/site.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="notifications" style="display: none;">
+        <p class="notification-message" id="errorBox">Message...</p>
+    </section>
+    <section class="notifications" style="display: none;background-color:rgba(1, 131, 29, 0.541);">
+        <p class="notification-message" id="successBox">Message...</p>
+    </section>
+    <div class="container" id="container">
+    </div>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="/node_modules/sammy/lib/sammy.js"></script>
+    <script src="/node_modules/sammy/lib/plugins/sammy.handlebars.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAtIvaUyKUdnob70z9pCfwwX3XhsgLfaIM",
+            authDomain: "movies-7037c.firebaseapp.com",
+            databaseURL: "https://movies-7037c.firebaseio.com",
+            projectId: "movies-7037c",
+            storageBucket: "movies-7037c.appspot.com",
+            messagingSenderId: "821972455006",
+            appId: "1:821972455006:web:a9be4953b542a410b2eecf"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<article class="post">
+    <h1>{{category}}</h1>
+    <h2><span>{{title}}</span></h2>
+    <p>{{content}}</p>
+    {{#if isCreator}}
+    <a href="#/delete/{{key}}" id="delete-button">Delete</a>
+    <a href="#/edit/{{key}}" id="edit-button">Edit</a>
+    {{/if}}
+    <a href="#/details/{{key}}" id="details-button">Details</a>
+</article>

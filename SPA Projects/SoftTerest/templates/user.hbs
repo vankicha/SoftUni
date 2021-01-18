@@ -1,0 +1,16 @@
+{{> header}}
+<div class="container home wrapper  my-md-5 pl-md-5">
+    <div class="profile home-text col-md-6 text-center col-lg">
+        <img class="profile-img" src="./images/user.png" />
+        <div class="profile-info">
+            <p>Email: <small>{{email}}</small></p>
+            <p class="infoType">Has {{ideasCount}} ideas =)</p>
+            {{#if hasIdeas}}
+            {{#each ideas}}
+            {{> userIdea}}
+            {{/each}}
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{> footer}}
