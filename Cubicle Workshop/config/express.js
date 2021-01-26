@@ -1,16 +1,18 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
-const bodyParser = require('body-parser');
 
-module.exports = (app) => {
+function setupExpress(app) {
+    app.engine('hbs', handlebars({
+        extname: 'hbs',
+    }));
+    
+    app.set('view engine', 'hbs');
+    
+    app.use(express.static('public'))
 
-    //TODO: Setup the view engine
-    app.engine('.hbs', handlebars({extname: '.hbs'}));
-    app.set('view enigne', '.hbs');
+    app.use(express.urlencoded({
+        extended: true
+    }));
+}
 
-    //TODO: Setup the body parser
-    app.use(bodyParser.urlencoded({ extended: false }));
-
-    //TODO: Setup the static files
-    app.use(express.static('./static'));
-};
+module.exports = setupExpress;

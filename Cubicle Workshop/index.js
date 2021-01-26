@@ -1,9 +1,11 @@
-const env = process.env.NODE_ENV || 'development';
+const express = require('express');
 
-const config = require('./config/config')[env];
-const app = require('express')();
+const config = require('./config/config');
+const routes = require('./routes');
+const app = express();
 
 require('./config/express')(app);
-require('./config/routes')(app);
 
-app.listen(config.port, console.log(`Listening on port ${config.port}! Now its up to you...`));
+app.use(routes);
+
+app.listen(config.PORT, () => (`Listening on port ${config.PORT}! Now its up to you...`));

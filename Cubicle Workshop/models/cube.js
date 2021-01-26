@@ -1,16 +1,11 @@
-const BaseModel = require('./base');
-const path = require('path');
-
-class CubeModel extends BaseModel {
-    constructor() {
-        const filePath = path.resolve('./config/database.json');
-        super(filePath);
-    }
-
-    insert(name, description, imageUrl, difficultyLevel) {
-        const entry = { name, description, imageUrl, difficultyLevel: Number(difficultyLevel) };
-        return super.insert(entry);
+class CubeModel{
+    constructor(id, name, description, imageUrl, difficultyLevel) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.difficultyLevel = difficultyLevel;
     }
 }
 
-module.exports = new CubeModel();
+module.exports = CubeModel;
