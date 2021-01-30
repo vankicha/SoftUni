@@ -8,12 +8,10 @@
     <input type="submit" value="search">
   </form>
 
-  {{#if products}}
   {{#each products}}
   {{> cube}}
-  {{/each}}
   {{else}}
   <h1>NO CUBES WERE FOUND</h1>
-  {{/if}}
+  {{/each}}
 
 </main>

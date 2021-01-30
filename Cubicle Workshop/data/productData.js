@@ -1,4 +1,4 @@
-const fs = require('fs/promises');
+/* const fs = require('fs/promises');
 const path = require('path');
 const productsDb = require('../config/database.json');
 
@@ -19,6 +19,6 @@ module.exports = {
             JSON.stringify(productsDb)
         );
     }
-}
+} */
 
 //COMMUNICATE WITH DB
