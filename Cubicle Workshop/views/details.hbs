@@ -5,5 +5,14 @@
     <p><span>Description:</span> {{description}}</p>
     <p><span>Difficulty level:</span> {{difficultyLevel}}</p>
     <a class="btn" href="/products">Back</a>
+    <a class="btn" href="/products/{{_id}}/attach">Attach</a>
+  </div>
+  <h2>Accessories</h2>
+  <div class="accessories">
+    {{#each accessories}}
+    {{> accessory}}
+    {{else}}
+    <h3 class="italic">This cube has no accessories yet...</h3>
+    {{/each}}
   </div>
 </main>
