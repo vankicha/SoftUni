@@ -31,8 +31,8 @@ async function getOneWithAccessories(id) {
     return Cube.findById(id).populate('accessories').lean();
 }
 
-function create(data) {
-    let cube = new Cube(data);
+function create(data, creatorId) {
+    let cube = new Cube({ ...data, creatorId });
 
     return cube.save();
 }

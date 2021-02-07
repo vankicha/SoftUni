@@ -16,7 +16,15 @@ router.get('/details/:productId', async (req, res) => {
     let product = await productService.getOneWithAccessories(
         req.params.productId
     );
-    res.render('details', { title: 'Details', ...product });
+
+    let isCreator =
+        product.creatorId.toString() === req.user._id ? true : false;
+
+    res.render('details', {
+        title: 'Details',
+        ...product,
+        isCreator,
+    });
 });
 
 router.get('/create', isAuthenticated, (req, res) => {
@@ -39,6 +47,10 @@ router.get('/:productId/attach', isAuthenticated, async (req, res) => {
 
 router.get('/:productId/edit', isAuthenticated, async (req, res) => {
     const { productId } = req.params;
+
+    if (req.user._id !== productId.toString()) {
+        return res.redirect(`/products/details/${productId}`);
+    }
     const product = await productService.getOne(productId);
 
     res.render('edit', {
@@ -49,6 +61,11 @@ router.get('/:productId/edit', isAuthenticated, async (req, res) => {
 
 router.get('/:productId/delete', isAuthenticated, async (req, res) => {
     const { productId } = req.params;
+
+    if (req.user._id !== productId.toString()) {
+        return res.redirect(`/products/details/${productId}`);
+    }
+
     const product = await productService.getOne(productId);
 
     res.render('delete', {
@@ -59,6 +76,11 @@ router.get('/:productId/delete', isAuthenticated, async (req, res) => {
 
 router.post('/:productId/edit', isAuthenticated, async (req, res) => {
     const { productId } = req.params;
+
+    if (req.user._id !== productId.toString()) {
+        return res.redirect(`/products/details/${productId}`);
+    }
+
     const productData = req.body;
     await productService.updateOne(productId, productData);
     res.redirect(`/products/details/${productId}`);
@@ -66,13 +88,18 @@ router.post('/:productId/edit', isAuthenticated, async (req, res) => {
 
 router.post('/:productId/delete', isAuthenticated, async (req, res) => {
     const { productId } = req.params;
+
+    if (req.user._id !== productId.toString()) {
+        return res.redirect(`/products/details/${productId}`);
+    }
+
     await productService.deleteOne(productId);
     res.redirect('/products');
 });
 
 router.post('/create', isAuthenticated, (req, res) => {
     productService
-        .create(req.body)
+        .create(req.body, req.user._id)
         .then(() => res.redirect('/products'))
         .catch(() => res.status('404').end());
 });
