@@ -2,17 +2,15 @@ const Cube = require('../models/Cube');
 const Accessory = require('../models/Accessory');
 
 async function getAll({ search, from, to }) {
-    
     let result;
-    
+
     if (search || from || to) {
         search = search.length > 0 ? search : '';
         from = from ? +from : 1;
         to = to ? +to : 6;
-        
+
         let regexSearch = new RegExp(search, 'i');
-        result = await Cube
-            .find({ name: { $regex: regexSearch } })
+        result = await Cube.find({ name: { $regex: regexSearch } })
             .where('difficultyLevel')
             .gte(+from)
             .lte(+to)
@@ -30,10 +28,7 @@ function getOne(id) {
 }
 
 async function getOneWithAccessories(id) {
-    return Cube
-        .findById(id)
-        .populate('accessories')
-        .lean();
+    return Cube.findById(id).populate('accessories').lean();
 }
 
 function create(data) {
@@ -51,12 +46,20 @@ async function attachAccessory(productId, accessoryId) {
     return product.save();
 }
 
+function updateOne(productId, productData) {
+    return Cube.updateOne({ _id: productId }, productData);
+}
+
+function deleteOne(productId) {
+    return Cube.deleteOne({ _id: productId });
+}
+
 module.exports = {
     getAll,
     getOne,
     getOneWithAccessories,
     create,
-    attachAccessory
-}
-
-//BUSSINES LOGIC
+    attachAccessory,
+    updateOne,
+    deleteOne,
+};
