@@ -4,16 +4,34 @@ const cubeSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
+        validate: {
+            validator: function (value) {
+                return /^[\w\s]+$/.test(value);
+            },
+            message: 'Name could contain only letters, digits and whitespaces',
+        },
     },
     description: {
         type: String,
         required: true,
-        maxlength: 50,
+        minlength: 20,
+        validate: {
+            validator: function (value) {
+                return /^[\w\s]+$/.test(value);
+            },
+            message:
+                'Description could contain only letters, digits and whitespaces',
+        },
     },
     imageUrl: {
         type: String,
         required: true,
-        validate: /^https?/,
+        validate: {
+            validator: function (value) {
+                return /^https?/.test(value);
+            },
+            message: 'Your image address should refer to actual picture',
+        },
     },
     difficultyLevel: {
         type: Number,

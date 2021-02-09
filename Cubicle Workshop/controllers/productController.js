@@ -18,7 +18,7 @@ router.get('/details/:productId', async (req, res) => {
     );
 
     let isCreator =
-        product.creatorId.toString() === req.user._id ? true : false;
+        product.creatorId.toString() === req.user?._id ? true : false;
 
     res.render('details', {
         title: 'Details',
