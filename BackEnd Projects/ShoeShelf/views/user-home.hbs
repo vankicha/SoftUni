@@ -1,0 +1,11 @@
+<main>
+    {{#if shoes}}
+    <div class="shoes">
+        {{#each shoes}}
+        {{> shoe}}
+        {{/each}}
+    </div>
+    {{else}}
+    <h1>No shoes to display. Be the first to create a new offer...</h1>
+    {{/if}}
+</main>
