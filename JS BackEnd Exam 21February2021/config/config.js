@@ -1,7 +1,7 @@
 const config = {
     development: {
         PORT: 5000,
-        DB_CONNECTION: 'mongodb://localhost/еxpense-tracker',
+        DB_CONNECTION: 'mongodb://localhost/expense-tracker',
         SALT_ROUNDS: 1,
         SECRET: 'secret',
         USER_SESSION: 'U_S',
