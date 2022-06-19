@@ -1,4 +1,4 @@
-const url = `https://jsapps-217aa.firebaseio.com/posts`;
+const url = `<URL_HERE>`;
 
 const app = Sammy('#root', function () {
     this.use('Handlebars', 'hbs');

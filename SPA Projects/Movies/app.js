@@ -1,4 +1,4 @@
-const url = `https://movies-7037c.firebaseio.com/movies`;
+const url = `<URL_HERE>`;
 
 const app = Sammy('#container', function () {
     this.use('Handlebars', 'hbs');

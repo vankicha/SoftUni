@@ -160,7 +160,7 @@ const app = Sammy('#main', function () {
                     body: JSON.stringify({ members })
                 }
 
-                fetch(`https://jsapps-217aa.firebaseio.com/teams/${key}.json`, patchInfo)
+                fetch(`<URL_HERE>`, patchInfo)
                     .then(() => {
                         ctx.redirect('#/catalog')
                     });
@@ -190,7 +190,7 @@ const app = Sammy('#main', function () {
                     body: JSON.stringify({ members })
                 }
 
-                fetch(`https://jsapps-217aa.firebaseio.com/teams/${key}.json`, patchInfo)
+                fetch(`<URL_HERE>`, patchInfo)
                     .then(() => {
                         ctx.redirect('#/catalog')
                     });
@@ -248,7 +248,7 @@ const app = Sammy('#main', function () {
                     body: JSON.stringify({ name, comment })
                 }
 
-                fetch(`https://jsapps-217aa.firebaseio.com/teams/${key}.json`, patchInfo)
+                fetch(`<URL_HERE>`, patchInfo)
                     .then(() => ctx.redirect('#/home'));
             });
     });
@@ -368,7 +368,7 @@ function getInfoForHome(ctx) {
 }
 
 async function getTeams() {
-    let data = await fetch(`https://jsapps-217aa.firebaseio.com/teams/.json`);
+    let data = await fetch(`<URL_HERE>`);
     let response = await data.json();
 
     let teams = [];
@@ -379,7 +379,7 @@ async function getTeams() {
 };
 
 async function findTeamKey(id) {
-    let data = await fetch(`https://jsapps-217aa.firebaseio.com/teams/.json`);
+    let data = await fetch(`<URL_HERE>`);
     let res = await data.json();
     let searchedKey = Object.keys(res).find(k => res[k]._id === id);
     return searchedKey;
@@ -400,7 +400,7 @@ function createTeam(name, comment) {
 
     let postInfo = { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(team) };
 
-    fetch(`https://jsapps-217aa.firebaseio.com/teams/.json`, postInfo);
+    fetch(`<URL_HERE>`, postInfo);
 }
 
 (() => {
