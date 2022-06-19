@@ -1,4 +1,4 @@
-const url = `https://js-exam-ff539-default-rtdb.firebaseio.com/destinations`;
+const url = `<URL_HERE>`;
 
 const app = Sammy('#container', function () {
     this.use('Handlebars', 'hbs');
