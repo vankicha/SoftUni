@@ -6,21 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: 
-      - "/BackEnd Projects/BookingUni"
-      - "/BackEnd Projects/ShoeShelf"
-      - "/BackEnd Projects/SoftuniWiki"
-      - "/BackEnd Projects/Theaters"
-      - "/BackEnd Projects/Tutorials"
-      - "/Cat Shelter Workshop"
-      - "/Cubicle Workshop"
-      - "/JS Applications Exam 06December2020"
-      - "/JS BackEnd Exam 21February2021"
-      - "/SPA Projects/Movies"
-      - "/SPA Projects/MyBlog"
-      - "/SPA Projects/ShoeShelf"
-      - "/SPA Projects/SoftTerest"
-      - "/SPA Projects/SoftWiki"
-      - "/SPA Projects/Team Manager"
+    directory: "/BackEnd Projects"
     schedule:
       interval: "weekly"
