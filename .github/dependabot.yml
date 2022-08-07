@@ -6,6 +6,77 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/BackEnd Projects/*"
+    directory: "/BackEnd Projects/BookUni"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/BackEnd Projects/ShoeShelf"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/BackEnd Projects/SoftuniWiki"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/BackEnd Projects/Theaters"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/BackEnd Projects/Tutorials"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/Cat Shelter Workshop"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/Cubicle Workshop"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/JS Applications Exam 06December2020"
+    schedule:
+      interval: "weekly"
+      
+      
+  - package-ecosystem: "npm"
+    directory: "/JS BackEnd Exam 21February2021"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/Movies"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/MyBlog"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/ShoeShelf"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/SoftTerest"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/SoftWiki"
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "npm"
+    directory: "/SPA Projects/Team Manager"
     schedule:
       interval: "weekly"
