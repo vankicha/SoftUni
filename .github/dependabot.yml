@@ -1,0 +1,26 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: 
+      - "/BackEnd Projects/BookingUni"
+      - "/BackEnd Projects/ShoeShelf"
+      - "/BackEnd Projects/SoftuniWiki"
+      - "/BackEnd Projects/Theaters"
+      - "/BackEnd Projects/Tutorials"
+      - "/Cat Shelter Workshop"
+      - "/Cubicle Workshop"
+      - "/JS Applications Exam 06December2020"
+      - "/JS BackEnd Exam 21February2021"
+      - "/SPA Projects/Movies"
+      - "/SPA Projects/MyBlog"
+      - "/SPA Projects/ShoeShelf"
+      - "/SPA Projects/SoftTerest"
+      - "/SPA Projects/SoftWiki"
+      - "/SPA Projects/Team Manager"
+    schedule:
+      interval: "weekly"
