@@ -6,6 +6,6 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/BackEnd Projects/"
+    directory: "/BackEnd Projects/BookingUni"
     schedule:
       interval: "weekly"
