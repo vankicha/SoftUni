@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.7.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.6.1",
     "lite-server": "^2.6.1",
     "sammy": "^0.7.6"
   }
